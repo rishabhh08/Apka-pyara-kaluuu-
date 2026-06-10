@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You</title>
+<style>
+    body { background-color: #ffe4e6; font-family: 'Comic Sans MS', cursive; text-align: center; padding: 20px; overflow-x: hidden; }
+    .heart { position: fixed; font-size: 20px; animation: float 5s linear infinite; z-index: -1; }
+    @keyframes float { 0% { transform: translateY(100vh); } 100% { transform: translateY(-10vh); } }
+    .box { background: #ffc0cb; padding: 20px; border-radius: 20px; margin: 20px auto; width: 90%; border: 3px solid #fff; display: none; }
+    .box.active { display: block; }
+    .btn { background: white; border: none; padding: 10px 20px; border-radius: 15px; font-weight: bold; cursor: pointer; color: #ff6b6b; margin: 10px; font-size: 14px; }
+    img, video { width: 100%; border-radius: 10px; margin: 10px 0; display: block; }
+    .text { font-weight: bold; font-size: 16px; color: #555; }
+</style>
+</head>
+<body>
+
+<div id="hearts"></div>
+
+<div id="p0" class="box active">
+    <button class="btn" onclick="show('p1')">Click on this</button>
+</div>
+
+<div id="p1" class="box">
+    <img src="CAT_IMAGE_HERE.jpg">
+    <p class="text">acha Patel nagar ki kuween</p>
+    <button class="btn" onclick="show('p2')">Hanjii Rishuuu</button>
+</div>
+
+<div id="p2" class="box">
+    <p class="text">chalo kuch mera talent dikhata hu</p>
+    <img src="LOVE_GIFT_GIF_HERE.gif">
+    <img src="GRAFFITI_GIF_HERE.gif">
+    <button class="btn" onclick="show('p3')">Click on this</button>
+</div>
+
+<div id="p3" class="box">
+    <video controls src="VIDEO_1_HERE.mp4"></video>
+    <p class="text">esa hi hota na main tumse milta or meri najar tumne hat ta hi nahi??</p>
+    <button class="btn" onclick="show('p4')">Click on this</button>
+</div>
+
+<div id="p4" class="box">
+    <video controls src="VIDEO_2_HERE.mp4"></video>
+    <p class="text">kash mil pata is wakt to kuch esa bhi hota</p>
+    <button class="btn" onclick="show('p5')">Click on this</button>
+</div>
+
+<div id="p5" class="box">
+    <video controls src="VIDEO_3_HERE.mp4"></video>
+    <p class="text">ese hi tumse chipakta main pass jaa pata to??</p>
+    <button class="btn" onclick="show('p6')">Click on this</button>
+</div>
+
+<div id="p6" class="box">
+    <video controls src="VIDEO_4_HERE.mp4"></video>
+    <p class="text">ye khushi ye online ke jariye kaha utni khushi de payegi jitna asaal me Milne se hota naseeb pesa bohot kuch</p>
+    <button class="btn" onclick="show('p7')">Click on this</button>
+</div>
+
+<div id="p7" class="box">
+    <video controls src="VIDEO_5_HERE.mp4"></video>
+    <p class="text">pyar to tumse hi rahega</p>
+    <button class="btn" onclick="show('p8')">Click on this</button>
+</div>
+
+<div id="p8" class="box">
+    <video controls src="VIDEO_6_HERE.mp4"></video>
+    <p class="text">apka Kalu hamesha apse pyar karega</p>
+    <button class="btn" onclick="show('p9')">Click on this</button>
+</div>
+
+<div id="p9" class="box">
+    <p class="text">Ngl, you'll always have a special place in my heart. Thank you for loving me the way you did and sticking around for as long as you did. I genuinely hope life gives you everything you're looking for Take care of yourself, be happy, and don't let anyone make you forget how amazing you are maybe we weren't endgame, but you'll always be one of my favorite chapters. Goodbye. 🤍</p>
+</div>
+
+<script>
+    function show(id) {
+        document.querySelectorAll('.box').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+    for(let i=0; i<15; i++) {
+        let h = document.createElement('div');
+        h.innerHTML = '❤️'; h.className = 'heart';
+        h.style.left = Math.random() * 100 + 'vw';
+        h.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        document.getElementById('hearts').appendChild(h);
+    }
+</script>
+</body>
+</html>
